@@ -8,11 +8,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-            {{$dataTable->table([
-'calss'=>'dataTable table table-bordered table-hover',
-
-
-])}}
+            {{$dataTable->table(['calss'=>'dataTable table table-bordered table-hover'],true)}}
             </div>
             <!-- /.box-body -->
           </div>

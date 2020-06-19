@@ -50,7 +50,7 @@ class adminDatatTable extends DataTable
                     // ->parameters($this->getBuilderParameters());
                     ->parameters([
                         'dom'=>'Blfrtip',
-                        'lengthMenu'=>[[10,25,50,100,-1], [10,25,50,'All Record']],
+                        'lengthMenu'=>[[10,25,50,100], [10,25,50,'All Record']],
                         'dom'=>'Blfrtip',
 
                         'buttons'=>[
@@ -59,10 +59,45 @@ class adminDatatTable extends DataTable
                             ['extend'=>'excel','className'=>'btn btn-success','text'=>'<i class="fa fa-info"> Export excel </i>'],
                             ['extend'=>'reload','className'=>'btn btn-default','text'=>'<i class="fa fa-refresh"> reload data </i>'],
                             ['className'=>'btn btn-primary','text'=>'<i class="fa fa-plus"> Add User </i>']
-                            
-                            
 
-                        ]
+                        ],
+                    
+                        'initComplete' => " function () {
+                            this.api().columns([0,1,2]).every(function () {
+                                var column = this;
+                                var input = document.createElement(\"input\");
+                                $(input).appendTo($(column.footer()).empty())
+                                .on('keyup', function () {
+                                    column.search($(this).val(), false, false, true).draw();
+                                });
+                            });
+                        }",
+        
+                        'language'         => [
+                            'sProcessing'     => trans('admin.sProcessing'),
+                            'sLengthMenu'     => trans('admin.sLengthMenu'),
+                            'sZeroRecords'    => trans('admin.sZeroRecords'),
+                            'sEmptyTable'     => trans('admin.sEmptyTable'),
+                            'sInfo'           => trans('admin.sInfo'),
+                            'sInfoEmpty'      => trans('admin.sInfoEmpty'),
+                            'sInfoFiltered'   => trans('admin.sInfoFiltered'),
+                            'sInfoPostFix'    => trans('admin.sInfoPostFix'),
+                            'sSearch'         => trans('admin.sSearch'),
+                            'sUrl'            => trans('admin.sUrl'),
+                            'sInfoThousands'  => trans('admin.sInfoThousands'),
+                            'sLoadingRecords' => trans('admin.sLoadingRecords'),
+                            'oPaginate'       => [
+                                'sFirst'         => trans('admin.sFirst'),
+                                'sLast'          => trans('admin.sLast'),
+                                'sNext'          => trans('admin.sNext'),
+                                'sPrevious'      => trans('admin.sPrevious'),
+                            ],
+                            'oAria'            => [
+                                'sSortAscending'  => trans('admin.sSortAscending'),
+                                'sSortDescending' => trans('admin.sSortDescending'),
+                            ],
+        
+                        ],
                    
                         ]);
     }
