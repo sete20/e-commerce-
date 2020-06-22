@@ -1,4 +1,4 @@
-<header class="main-header">
+  <header class="main-header">
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -26,7 +26,7 @@
           <img src="{{ url('design/adminlte') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>{{admin()->user()->name}}</p>
+          <p>{{ admin()->user()->name }}</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -44,30 +44,30 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class=" treeview">
-          <a href="{{aurl()}}">
-            <i class="fa fa-dashboard"></i> <span>Admin Dashboard</span>
+        <li class="treeview">
+          <a href="{{ aurl('') }}">
+            <i class="fa fa-dashboard"></i> <span>{{ trans('admin.dashboard') }}</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
+
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li class="active"><a href="{{aurl()}}"><i class="fa fa-dashboard"></i>Dashboard </a></li>
-          </ul>
+
         </li>
-        <li class=" treeview">
+
+
+        <li class="treeview">
           <a href="#">
-            <i class="fa fa-users"></i> <span>Admin Account Dashboard</span>
+            <i class="fa fa-users"></i> <span>{{ trans('admin.admin') }}</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="{{aurl('admin')}}"><i class="fa fa-users"></i>Admin Account</a></li>
+            <li class="active"><a href="{{ aurl('admin') }}"><i class="fa fa-users"></i> {{ trans('admin.admin') }}</a></li>
+
           </ul>
         </li>
-   
-    
+
       </ul>
     </section>
     <!-- /.sidebar -->
