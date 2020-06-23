@@ -1,5 +1,11 @@
 <?php
 return [
+	'email' =>'Email Address',
+	'name' =>'User Name',
+	'id' =>'User Id',
+	'created_at' =>'crated at',
+	'updated_at' =>'last Update',
+
 
 	'login'                        => 'Login',
 	'adminpanel'                   => 'Admin Panel',
