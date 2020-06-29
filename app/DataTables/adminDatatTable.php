@@ -50,9 +50,15 @@ class adminDatatTable extends DataTable
 				'dom'        => 'Blfrtip',
 				'lengthMenu' => [[10, 25, 50, 100], [10, 25, 50, trans('admin.all_record')]],
 				'buttons'    => [
-					['text'     => '<i class="fa fa-plus"></i> '.trans('admin.create_admin'), 'className'     => 'btn btn-info'],
-					['text'     => '<i class="fa fa-plus"></i> '.trans('admin.delete_all'), 'className'     => 'btn btn-danger delBtn'],
-					['extend'   => 'print', 'className'   => 'btn btn-primary', 'text'   => '<i class="fa fa-print"></i>'],
+		['text'     => '<i class="fa fa-plus"></i> 
+		'.trans('admin.create_admin'), 'className'     =>
+		 'btn btn-info','action'=>"
+		 function(){
+			 window.location.href ='".\URL::current()."/create';
+		 }
+		 "],
+		['text'     => '<i class="fa fa-plus"></i> '.trans('admin.delete_all'), 'className'     => 'btn btn-danger delBtn'],
+		['extend'   => 'print', 'className'   => 'btn btn-primary', 'text'   => '<i class="fa fa-print"></i>'],
 					['extend'   => 'csv', 'className'   => 'btn btn-info', 'text'   => '<i class="fa fa-file"></i> '.trans('admin.ex_csv')],
 					['extend'   => 'excel', 'className'   => 'btn btn-success', 'text'   => '<i class="fa fa-file"></i> '.trans('admin.ex_excel')],
 					['extend'   => 'reload', 'className'   => 'btn btn-default', 'text'   => '<i class="fa fa-refresh"></i>'],

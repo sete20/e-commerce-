@@ -1,5 +1,7 @@
 <?php
 return [
+	"password_confirmation" =>"password confirmation",
+	"password" =>"password",
 	'email' =>'Email Address',
 	'name' =>'User Name',
 	'id' =>'User Id',
