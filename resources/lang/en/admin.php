@@ -6,6 +6,7 @@ return [
 	'created_at' =>'crated at',
 	'updated_at' =>'last Update',
 
+	"delete_all"				   => "Delete All",
 
 	'login'                        => 'Login',
 	'adminpanel'                   => 'Admin Panel',

@@ -15,10 +15,12 @@ class adminDatatTable extends DataTable
 	 */
 	public function dataTable($query) {
 		return datatables($query)
+			->addColumn('checkbox', 'admin.admins.btn.checkbox')
 			->addColumn('edit', 'admin.admins.btn.edit')
 			->addColumn('delete', 'admin.admins.btn.delete')
 			->rawColumns([
 				'edit',
+				'checkbox',
 				'delete',
 			]);
 	}
@@ -49,6 +51,7 @@ class adminDatatTable extends DataTable
 				'lengthMenu' => [[10, 25, 50, 100], [10, 25, 50, trans('admin.all_record')]],
 				'buttons'    => [
 					['text'     => '<i class="fa fa-plus"></i> '.trans('admin.create_admin'), 'className'     => 'btn btn-info'],
+					['text'     => '<i class="fa fa-plus"></i> '.trans('admin.delete_all'), 'className'     => 'btn btn-danger delBtn'],
 					['extend'   => 'print', 'className'   => 'btn btn-primary', 'text'   => '<i class="fa fa-print"></i>'],
 					['extend'   => 'csv', 'className'   => 'btn btn-info', 'text'   => '<i class="fa fa-file"></i> '.trans('admin.ex_csv')],
 					['extend'   => 'excel', 'className'   => 'btn btn-success', 'text'   => '<i class="fa fa-file"></i> '.trans('admin.ex_excel')],
@@ -56,7 +59,7 @@ class adminDatatTable extends DataTable
 
 				],
 				'initComplete' => " function () {
-		            this.api().columns([0,1,2]).every(function () {
+		            this.api().columns([1,2,3]).every(function () {
 		                var column = this;
 		                var input = document.createElement(\"input\");
 		                $(input).appendTo($(column.footer()).empty())
@@ -79,6 +82,14 @@ class adminDatatTable extends DataTable
 	protected function getColumns() {
 		return [
 			[
+				'name'  => 'checkbox',
+				'data'  => 'checkbox',
+				'title' => '<input type="checkbox" class="check_all" onclick="check_all()" />',
+				'exportable' => false,
+				'printable'  => false,
+				'orderable'  => false,
+				'searchable' => false,
+			],[
 				'name'  => 'id',
 				'data'  => 'id',
 				'title' => trans('admin.id'),
