@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="{{ url('/') }}/design/adminlte/dist/css/rtl/rtl.css">
   <link href="https://fonts.googleapis.com/css?family=Cairo:300,400&amp;subset=arabic,latin-ext" rel="stylesheet">
   <style type="text/css">
-    html,body ,h1,h2,h3,h4,h5,h6,.alert{
+    html,body ,h1,h2,h3,h4,h5,h6{
       font-family: 'Cairo', sans-serif;
     }
   </style>
@@ -42,7 +42,9 @@
 
 
   <script src="{{ url('/design/adminlte/dist/js/myfunctions.js') }}"></script>
-   
+
+
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>

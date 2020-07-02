@@ -57,7 +57,7 @@
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
-        <ul class="treeview-menu" style="{{ active_menu('admin')[1] }}">
+        <ul class="treeview-menu" style="}">
           <li class=""><a href="{{ aurl('admin') }}"><i class="fa fa-users"></i> {{ trans('admin.admin') }}</a></li>
         </ul>
       </li>
