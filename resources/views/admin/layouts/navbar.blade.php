@@ -68,6 +68,19 @@
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
+        <li class="treeview {{ active_menu('countries')[0] }}">
+    <a href="#">
+      <i class="fa fa-flag"></i> <span>{{ trans('admin.countries') }}</span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu" style="{{ active_menu('countries')[1] }}">
+      <li class=""><a href="{{ aurl('countries') }}"><i class="fa fa-flag"></i> {{ trans('admin.countries') }}</a></li>
+      <li class=""><a href="{{ aurl('countries/create') }}"><i class="fa fa-plus"></i> {{ trans('admin.add') }}</a></li>
+    </ul>
+  </li>
+
         <ul class="treeview-menu" style="{{ active_menu('users')[1] }}">
           <li class=""><a href="{{ aurl('users') }}"><i class="fa fa-users"></i> {{ trans('admin.users') }}</a></li>
           <li class=""><a href="{{ aurl('users') }}?level=user"><i class="fa fa-users"></i> {{ trans('admin.user') }}</a></li>

@@ -13,7 +13,18 @@ class Settings extends Controller {
 	public function setting_save() {
 	$data=	$this->validate(request(), [
 			'logo' => v_image(),
-			'icon' => v_image()], [],
+			'icon' => v_image(),
+			'status'              => '',
+			'description'         => '',
+			'keywords'            => '',
+			'main_lang'           => '',
+			'message_maintenance' => '',
+			'email'               => '',
+			'sitename_en'         => '',
+			'sitename_ar'         => '',
+		],	
+			 [],
+		
 		[
 			'logo' => trans('admin.logo'),
 			'icon' => trans('admin.icon')

@@ -13,6 +13,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 		Route::group(['middleware' => 'admin:admin'], function () {
 				Route::resource('admin', 'AdminController');
 				Route::resource('users', 'UsersController');
+				Route::resource('countries', 'countriesController');
+				Route::delete('countries/destroy/all', 'CountriesController@multi_delete');
+
 				Route::delete('users/destroy/all', 'UsersController@multi_delete');
 
 				Route::delete('admin/destroy/all', 'AdminController@multi_delete');

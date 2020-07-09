@@ -1,14 +1,5 @@
 <?php
 return [
-	"password_confirmation" =>"password confirmation",
-	"password" =>"password",
-	'email' =>'Email Address',
-	'name' =>'User Name',
-	'id' =>'User Id',
-	'created_at' =>'crated at',
-	'updated_at' =>'last Update',
-
-	"delete_all"				   => "Delete All",
 
 	'login'                        => 'Login',
 	'adminpanel'                   => 'Admin Panel',
