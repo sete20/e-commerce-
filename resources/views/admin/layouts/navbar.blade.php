@@ -68,7 +68,7 @@
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
-        <li class="treeview {{ active_menu('countries')[0] }}">
+  <li class="treeview {{ active_menu('countries')[0] }}">
     <a href="#">
       <i class="fa fa-flag"></i> <span>{{ trans('admin.countries') }}</span>
       <span class="pull-right-container">
@@ -78,6 +78,31 @@
     <ul class="treeview-menu" style="{{ active_menu('countries')[1] }}">
       <li class=""><a href="{{ aurl('countries') }}"><i class="fa fa-flag"></i> {{ trans('admin.countries') }}</a></li>
       <li class=""><a href="{{ aurl('countries/create') }}"><i class="fa fa-plus"></i> {{ trans('admin.add') }}</a></li>
+    </ul>
+  </li>
+  <li class="treeview {{ active_menu('cities')[0] }}">
+    <a href="#">
+      <i class="fa fa-flag"></i> <span>{{ trans('admin.cities') }}</span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu" style="{{ active_menu('cities')[1] }}">
+      <li class=""><a href="{{ aurl('cities') }}"><i class="fa fa-flag"></i> {{ trans('admin.cities') }}</a></li>
+      <li class=""><a href="{{ aurl('cities/create') }}"><i class="fa fa-plus"></i> {{ trans('admin.add') }}</a></li>
+    </ul>
+  </li>
+
+  <li class="treeview {{ active_menu('states')[0] }}">
+    <a href="#">
+      <i class="fa fa-flag"></i> <span>{{ trans('admin.states') }}</span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu" style="{{ active_menu('states')[1] }}">
+      <li class=""><a href="{{ aurl('states') }}"><i class="fa fa-flag"></i> {{ trans('admin.states') }}</a></li>
+      <li class=""><a href="{{ aurl('states/create') }}"><i class="fa fa-plus"></i> {{ trans('admin.add') }}</a></li>
     </ul>
   </li>
 
