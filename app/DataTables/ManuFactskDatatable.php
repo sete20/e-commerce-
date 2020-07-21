@@ -2,10 +2,10 @@
 
 namespace App\DataTables;
 
-use App\Model\State;
+use App\Model\Manufacturers;
 use Yajra\DataTables\Services\DataTable;
 
-class stateDatatable extends DataTable {
+class ManuFactskDatatable extends DataTable {
 	/**
 	 * Build DataTable class.
 	 *
@@ -14,9 +14,9 @@ class stateDatatable extends DataTable {
 	 */
 	public function dataTable($query) {
 		return datatables($query)
-			->addColumn('checkbox', 'admin.states.btn.checkbox')
-			->addColumn('edit', 'admin.states.btn.edit')
-			->addColumn('delete', 'admin.states.btn.delete')
+			->addColumn('checkbox', 'admin.manufacturers.btn.checkbox')
+			->addColumn('edit', 'admin.manufacturers.btn.edit')
+			->addColumn('delete', 'admin.manufacturers.btn.delete')
 			->rawColumns([
 				'edit',
 				'delete',
@@ -31,7 +31,7 @@ class stateDatatable extends DataTable {
 	 * @return \Illuminate\Database\Eloquent\Builder
 	 */
 	public function query() {
-		return State::query()->with('country_id')->with('city_id')->select('states.*');
+		return Manufacturers::query();
 	}
 
 	/**
@@ -62,7 +62,7 @@ class stateDatatable extends DataTable {
 
 				],
 				'initComplete' => " function () {
-		            this.api().columns([2,3,4 ]).every(function () {
+		            this.api().columns([2,3]).every(function () {
 		                var column = this;
 		                var input = document.createElement(\"input\");
 		                $(input).appendTo($(column.footer()).empty())
@@ -97,22 +97,21 @@ class stateDatatable extends DataTable {
 				'data'  => 'id',
 				'title' => '#',
 			], [
-				'name'  => 'state_name_ar',
-				'data'  => 'state_name_ar',
-				'title' => trans('admin.state_name_ar'),
+				'name'  => 'name_ar',
+				'data'  => 'name_ar',
+				'title' => trans('admin.name_ar'),
 			], [
-				'name'  => 'state_name_en',
-				'data'  => 'state_name_en',
-				'title' => trans('admin.state_name_en'),
+				'name'  => 'name_en',
+				'data'  => 'name_en',
+				'title' => trans('admin.name_en'),
 			], [
-				'name'  => 'country_id.country_name_'.lang(),
-				'data'  => 'country_id.country_name_'.lang(),
-				'title' => trans('admin.country_id'),
-            ],
-            [
-				'name'  => 'city_id.city_name_'.lang(),
-				'data'  => 'city_id.city_name_'.lang(),
-				'title' => trans('admin.city_id'),
+				'name'  => 'mobile',
+				'data'  => 'mobile',
+				'title' => trans('admin.mobile'),
+			], [
+				'name'  => 'contact_name',
+				'data'  => 'contact_name',
+				'title' => trans('admin.contact_name'),
 			], [
 				'name'  => 'created_at',
 				'data'  => 'created_at',
@@ -148,6 +147,6 @@ class stateDatatable extends DataTable {
 	 * @return string
 	 */
 	protected function filename() {
-		return 'states_'.date('YmdHis');
+		return 'manufacturers_'.date('YmdHis');
 	}
 }

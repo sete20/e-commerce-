@@ -105,7 +105,44 @@
       <li class=""><a href="{{ aurl('states/create') }}"><i class="fa fa-plus"></i> {{ trans('admin.add') }}</a></li>
     </ul>
   </li>
-
+  <li class="treeview {{ active_menu('departments')[0] }}">
+    <a href="#">
+      <i class="fa fa-list"></i> <span>{{ trans('admin.departments') }}</span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu" style="{{ active_menu('departments')[1] }}">
+      <li class=""><a href="{{ aurl('departments') }}"><i class="fa fa-flag"></i> {{ trans('admin.departments') }}</a></li>
+      <li class=""><a href="{{ aurl('departments/create') }}"><i class="fa fa-plus"></i> {{ trans('admin.add') }}</a></li>
+    </ul>
+  </li>
+  
+  <li class="treeview {{ active_menu('trademarks')[0] }}">
+    <a href="#">
+      <i class="fa fa-cube"></i> <span>{{ trans('admin.trademarks') }}</span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu" style="{{ active_menu('trademarks')[1] }}">
+      <li class=""><a href="{{ aurl('trademarks') }}"><i class="fa fa-cube"></i> {{ trans('admin.trademarks') }}</a></li>
+      <li class=""><a href="{{ aurl('trademarks/create') }}"><i class="fa fa-plus"></i> {{ trans('admin.add') }}</a></li>
+    </ul>
+  </li>
+  
+  <li class="treeview {{ active_menu('manufacturers')[0] }}">
+    <a href="#">
+      <i class="fa fa-user"></i> <span>{{ trans('admin.manufacturers') }}</span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu" style="{{ active_menu('manufacturers')[1] }}">
+      <li class=""><a href="{{ aurl('manufacturers') }}"><i class="fa fa-user"></i> {{ trans('admin.manufacturers') }}</a></li>
+      <li class=""><a href="{{ aurl('manufacturers/create') }}"><i class="fa fa-plus"></i> {{ trans('admin.add') }}</a></li>
+    </ul>
+  </li>
         <ul class="treeview-menu" style="{{ active_menu('users')[1] }}">
           <li class=""><a href="{{ aurl('users') }}"><i class="fa fa-users"></i> {{ trans('admin.users') }}</a></li>
           <li class=""><a href="{{ aurl('users') }}?level=user"><i class="fa fa-users"></i> {{ trans('admin.user') }}</a></li>

@@ -11,11 +11,23 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 		Route::get('reset/password/{token}', 'AdminAuth@reset_password');
 		Route::post('reset/password/{token}', 'AdminAuth@reset_password_final');
 		Route::group(['middleware' => 'admin:admin'], function () {
+
 				Route::resource('admin', 'AdminController');
+
 				Route::resource('users', 'UsersController');
+
 				Route::resource('countries', 'countriesController');
 				Route::delete('countries/destroy/all', 'CountriesController@multi_delete');
 
+				Route::resource('departments', 'DepartmentsController');
+				Route::delete('departments/destroy/all', 'DepartmentsController@multi_delete');
+
+				Route::resource('manufacturers', 'ManufacturerController');
+				Route::delete('manufacturers/destroy/all', 'ManufacturerController@multi_delete');
+				
+				Route::resource('trademarks', 'trademarksController');
+				Route::delete('trademarks/destroy/all', 'trademarksController@multi_delete');
+				
 				Route::resource('cities', 'CitiesController');
 				Route::delete('cities/destroy/all', 'CitiesController@multi_delete');
 
