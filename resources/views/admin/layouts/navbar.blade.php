@@ -143,6 +143,58 @@
       <li class=""><a href="{{ aurl('manufacturers/create') }}"><i class="fa fa-plus"></i> {{ trans('admin.add') }}</a></li>
     </ul>
   </li>
+  <li class="treeview {{ active_menu('shipping')[0] }}">
+    <a href="#">
+      <i class="fa fa-truck"></i> <span>{{ trans('admin.shipping') }}</span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu" style="{{ active_menu('shipping')[1] }}">
+      <li class=""><a href="{{ aurl('shipping') }}"><i class="fa fa-truck"></i> {{ trans('admin.shipping') }}</a></li>
+      <li class=""><a href="{{ aurl('shipping/create') }}"><i class="fa fa-plus"></i> {{ trans('admin.add') }}</a></li>
+    </ul>
+  </li>
+
+
+   <li class="treeview {{ active_menu('malls')[0] }}">
+    <a href="#">
+      <i class="fa fa-building"></i> <span>{{ trans('admin.malls') }}</span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu" style="{{ active_menu('malls')[1] }}">
+      <li class=""><a href="{{ aurl('malls') }}"><i class="fa fa-building"></i> {{ trans('admin.malls') }}</a></li>
+      <li class=""><a href="{{ aurl('malls/create') }}"><i class="fa fa-plus"></i> {{ trans('admin.add') }}</a></li>
+    </ul>
+  </li>
+
+   <li class="treeview {{ active_menu('colors')[0] }}">
+    <a href="#">
+      <i class="fa fa-paint-brush"></i> <span>{{ trans('admin.colors') }}</span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu" style="{{ active_menu('colors')[1] }}">
+      <li class=""><a href="{{ aurl('colors') }}"><i class="fa fa-paint-brush"></i> {{ trans('admin.colors') }}</a></li>
+      <li class=""><a href="{{ aurl('colors/create') }}"><i class="fa fa-plus"></i> {{ trans('admin.add') }}</a></li>
+    </ul>
+  </li>
+
+   <li class="treeview {{ active_menu('sizes')[0] }}">
+    <a href="#">
+      <i class="fa fa-info-circle"></i> <span>{{ trans('admin.sizes') }}</span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu" style="{{ active_menu('sizes')[1] }}">
+      <li class=""><a href="{{ aurl('sizes') }}"><i class="fa fa-info-circle"></i> {{ trans('admin.sizes') }}</a></li>
+      <li class=""><a href="{{ aurl('sizes/create') }}"><i class="fa fa-plus"></i> {{ trans('admin.add') }}</a></li>
+    </ul>
+  </li>
         <ul class="treeview-menu" style="{{ active_menu('users')[1] }}">
           <li class=""><a href="{{ aurl('users') }}"><i class="fa fa-users"></i> {{ trans('admin.users') }}</a></li>
           <li class=""><a href="{{ aurl('users') }}?level=user"><i class="fa fa-users"></i> {{ trans('admin.user') }}</a></li>

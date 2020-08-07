@@ -28,6 +28,19 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 				Route::resource('trademarks', 'trademarksController');
 				Route::delete('trademarks/destroy/all', 'trademarksController@multi_delete');
 				
+
+				Route::resource('colors', 'ColorController');
+				Route::delete('colors/destroy/all', 'ColorController@multi_delete');
+				
+				Route::resource('sizes', 'SizeController');
+				Route::delete('sizes/destroy/all', 'SizeController@multi_delete');
+				
+				Route::resource('products', 'productsController');
+				Route::delete('products/destroy/all', 'productsController@multi_delete');
+				
+				Route::resource('weights', 'WeightsController');
+				Route::delete('weights/destroy/all', 'WeightsController@multi_delete');
+
 				Route::resource('cities', 'CitiesController');
 				Route::delete('cities/destroy/all', 'CitiesController@multi_delete');
 
