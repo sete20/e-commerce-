@@ -32,8 +32,6 @@ var Colorpicker = function(element, options) {
     this.updateData(this.color);
   }
 
-  this.disabled = false;
-
   // Setup picker
   var $picker = this.picker = $(this.options.template);
   if (this.options.customClass) {
@@ -222,12 +220,12 @@ Colorpicker.prototype = {
     });
   },
   updateData: function(val) {
-    val = val || this.color.toString(false, this.format);
+    val = val || this.color.toString(this.format, false);
     this.element.data('color', val);
     return val;
   },
   updateInput: function(val) {
-    val = val || this.color.toString(false, this.format);
+    val = val || this.color.toString(this.format, false);
     if (this.input !== false) {
       this.input.prop('value', val);
       this.input.trigger('change');
@@ -258,13 +256,13 @@ Colorpicker.prototype = {
     });
 
     this.picker.find('.colorpicker-saturation')
-      .css('backgroundColor', this.color.toHex(true, this.color.value.h, 1, 1, 1));
+      .css('backgroundColor', (this.options.hexNumberSignPrefix ? '' : '#') + this.color.toHex(this.color.value.h, 1, 1, 1));
 
     this.picker.find('.colorpicker-alpha')
-      .css('backgroundColor', this.color.toHex(true));
+      .css('backgroundColor', (this.options.hexNumberSignPrefix ? '' : '#') + this.color.toHex());
 
     this.picker.find('.colorpicker-color, .colorpicker-color div')
-      .css('backgroundColor', this.color.toString(true, this.format));
+      .css('backgroundColor', this.color.toString(this.format, true));
 
     return val;
   },
@@ -281,16 +279,16 @@ Colorpicker.prototype = {
       var icn = this.component.find('i').eq(0);
       if (icn.length > 0) {
         icn.css({
-          'backgroundColor': color.toString(true, this.format)
+          'backgroundColor': color.toString(this.format, true)
         });
       } else {
         this.component.css({
-          'backgroundColor': color.toString(true, this.format)
+          'backgroundColor': color.toString(this.format, true)
         });
       }
     }
 
-    return color.toString(false, this.format);
+    return color.toString(this.format, false);
   },
   update: function(force) {
     var val;
@@ -346,31 +344,34 @@ Colorpicker.prototype = {
     return (this.input !== false);
   },
   isDisabled: function() {
-    return this.disabled;
+    if (this.hasInput()) {
+      return (this.input.prop('disabled') === true);
+    }
+    return false;
   },
   disable: function() {
     if (this.hasInput()) {
       this.input.prop('disabled', true);
+      this.element.trigger({
+        type: 'disable',
+        color: this.color,
+        value: this.getValue()
+      });
+      return true;
     }
-    this.disabled = true;
-    this.element.trigger({
-      type: 'disable',
-      color: this.color,
-      value: this.getValue()
-    });
-    return true;
+    return false;
   },
   enable: function() {
     if (this.hasInput()) {
       this.input.prop('disabled', false);
+      this.element.trigger({
+        type: 'enable',
+        color: this.color,
+        value: this.getValue()
+      });
+      return true;
     }
-    this.disabled = false;
-    this.element.trigger({
-      type: 'enable',
-      color: this.color,
-      value: this.getValue()
-    });
-    return true;
+    return false;
   },
   currentSlider: null,
   mousePointer: {
