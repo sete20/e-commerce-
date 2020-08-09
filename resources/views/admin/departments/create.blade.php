@@ -12,9 +12,9 @@ $(document).ready(function(){
       }
     },
     "checkbox" : {
-      "keep_selected_style" : true
+      "keep_selected_style" : false
     },
-    "plugins" : [ "wholerow", ]
+    "plugins" : [ "wholerow" ]
   });
 
 });

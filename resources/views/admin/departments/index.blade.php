@@ -1,5 +1,6 @@
 @extends('admin.index')
 @section('content')
+
 @push('js')
 <!-- Trigger the modal with a button -->
 

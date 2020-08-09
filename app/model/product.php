@@ -1,11 +1,11 @@
 <?php
 
-namespace App\model;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class product extends Model
-{
+class Product extends Model {
+
 	protected $table    = 'products';
 	protected $fillable = [
 		'title',
@@ -30,4 +30,24 @@ class product extends Model
 		'status',
 		'reason',
 	];
+
+	public function related() {
+		return $this->hasMany(\App\Model\RelatedProudct::class , 'product_id', 'id');
+	}
+
+	public function mall_product() {
+		return $this->hasMany(\App\Model\MallProduct::class , 'product_id', 'id');
+	}
+
+	public function other_data() {
+		return $this->hasMany(\App\Model\OtherData::class , 'product_id', 'id');
+	}
+
+	public function malls() {
+		return $this->hasMany(\App\Model\MallProduct::class , 'product_id', 'id');
+	}
+
+	public function files() {
+		return $this->hasMany('App\File', 'relation_id', 'id')->where('file_type', 'product');
+	}
 }

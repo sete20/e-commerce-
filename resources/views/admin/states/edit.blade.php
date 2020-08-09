@@ -54,13 +54,15 @@ $(document).ready(function(){
     </div>
     <div class="form-group">
       {!! Form::label('country_id',trans('admin.country_id')) !!}
-      {!! Form::select('country_id',App\Model\Country::pluck('country_name_'.lang(),'id'),$state->country_id,['class'=>'form-control country_id','placeholder'=>'.............']) !!}
+      {!! Form::select('country_id',App\Model\Country::pluck('country_name_'.session('lang'),'id'),$state->country_id,['class'=>'form-control country_id','placeholder'=>'.............']) !!}
     </div>
-    <div class="form-group">
+
+     <div class="form-group">
         {!! Form::label('city_id',trans('admin.city_id')) !!}
         <span class="city"></span>
      </div>
-     <div class="form-group">
+
+
     {!! Form::submit(trans('admin.save'),['class'=>'btn btn-primary']) !!}
     {!! Form::close() !!}
   </div>

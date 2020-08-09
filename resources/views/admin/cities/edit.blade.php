@@ -17,7 +17,7 @@
     </div>
     <div class="form-group">
       {!! Form::label('country_id',trans('admin.country_id')) !!}
-      {!! Form::select('country_id',App\Model\Country::pluck('country_name_'.lang(),'id'),$country->country_id,['class'=>'form-control']) !!}
+      {!! Form::select('country_id',App\Model\Country::pluck('country_name_'.session('lang'),'id'),$country->country_id,['class'=>'form-control']) !!}
     </div>
 
     {!! Form::submit(trans('admin.save'),['class'=>'btn btn-primary']) !!}

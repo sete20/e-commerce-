@@ -1,13 +1,14 @@
 @extends('admin.index')
 @section('content')
+
+
 <div class="box">
   <div class="box-header">
     <h3 class="box-title">{{ $title }}</h3>
   </div>
   <!-- /.box-header -->
   <div class="box-body">
-  
-  {!! Form::open(['url'=>aurl('admin/'.$admin->id),'method'=>'put' ]) !!}
+    {!! Form::open(['url'=>aurl('admin/'.$admin->id),'method'=>'put' ]) !!}
      <div class="form-group">
         {!! Form::label('name',trans('admin.name')) !!}
         {!! Form::text('name',$admin->name,['class'=>'form-control']) !!}
@@ -24,16 +25,9 @@
     {!! Form::close() !!}
   </div>
   <!-- /.box-body -->
-  <!-- /.box-body -->
 </div>
 <!-- /.box -->
 
 
-<!-- Trigger the modal with a button -->
 
-<!-- Modal -->
-
-          @push('js')
-         
-@endpush
 @endsection

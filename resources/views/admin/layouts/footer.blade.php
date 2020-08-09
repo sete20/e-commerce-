@@ -204,9 +204,11 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-<!-- jQuery UI 1.11.4 -->
 <script src="{{ url('/design/adminlte/bower_components/jquery/dist/jquery.min.js') }}"></script>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
 <script src="{{ url('/design/adminlte/bower_components/jquery-ui/jquery-ui.min.js') }}"></script>
 
 <link rel="stylesheet" href="{{ url('design/adminlte') }}/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
@@ -249,10 +251,11 @@
 <script src="{{ url('/design/adminlte/dist/js/pages/dashboard.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ url('/design/adminlte/dist/js/demo.js') }}"></script>
-
 <script src="{{ url('design/adminlte/jstree/jstree.js') }}"></script>
 <script src="{{ url('design/adminlte/jstree/jstree.wholerow.js') }}"></script>
 <script src="{{ url('design/adminlte/jstree/jstree.checkbox.js') }}"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.ar.min.js"></script>
 @stack('js')
 @stack('css')
 

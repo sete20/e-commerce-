@@ -1,14 +1,12 @@
 @extends('admin.index')
 @section('content')
-
-
 <div class="box">
   <div class="box-header">
     <h3 class="box-title">{{ $title }}</h3>
   </div>
   <!-- /.box-header -->
   <div class="box-body">
-  	{!! Form::open(['id'=>'form_data','url'=>aurl('admin/destroy/all'),'method'=>'delete']) !!}
+  	{!! Form::open(['id'=>'form_data','url'=>aurl('users/destroy/all'),'method'=>'delete']) !!}
     {!! $dataTable->table(['class'=>'dataTable table table-striped table-hover  table-bordered'],true) !!}
     {!! Form::close() !!}
   </div>
@@ -52,10 +50,12 @@
   </div>
 </div>
 
-          @push('js')
-          <script>
-            delete_all();
-          </script>
+
+@push('js')
+<script>
+delete_all();
+</script>
 {!! $dataTable->scripts() !!}
 @endpush
+
 @endsection

@@ -1,9 +1,8 @@
 @extends('admin.index')
 @section('content')
 
- @push('js')    
- <!-- <script type="text/javascript" src='https://maps.google.com/maps/api/js?sensor=false&libraries=places'></script> -->
- <script type="text/javascript" src='https://maps.google.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyBZ2W9GUNMjhdOXfyIeumQKjOp6SXfW5dM'></script>
+ @push('js')
+ <script type="text/javascript" src='https://maps.google.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyBwxuW2cdXbL38w9dcPOXfGLmi1J7AVVB8'></script>
  <script type="text/javascript" src='{{ url('design/adminlte/dist/js/locationpicker.jquery.js') }}'></script>
 <?php
 $lat = !empty(old('lat'))?old('lat'):'30.034024628931657';

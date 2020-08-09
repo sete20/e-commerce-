@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Model\Country;
+use App\Model\product;
 use Yajra\DataTables\Services\DataTable;
 
 class productDatatable extends DataTable {
@@ -14,14 +14,15 @@ class productDatatable extends DataTable {
 	 */
 	public function dataTable($query) {
 		return datatables($query)
-			->addColumn('checkbox', 'admin.countries.btn.checkbox')
-			->addColumn('edit', 'admin.countries.btn.edit')
-			->addColumn('delete', 'admin.countries.btn.delete')
-			->rawColumns([
-				'edit',
-				'delete',
-				'checkbox',
-			]);
+		->addColumn('checkbox', 'admin.products.btn.checkbox')
+		->addColumn('edit', 'admin.products.btn.edit')
+		->addColumn('delete', 'admin.products.btn.delete')
+		->rawColumns([
+		   'edit',
+		   'delete',
+		   'color',
+		   'checkbox',
+		]);
 	}
 
 	/**
@@ -31,7 +32,7 @@ class productDatatable extends DataTable {
 	 * @return \Illuminate\Database\Eloquent\Builder
 	 */
 	public function query() {
-		return Country::query();
+		return Product::query();
 	}
 
 	/**
@@ -82,56 +83,52 @@ class productDatatable extends DataTable {
 	 *
 	 * @return array
 	 */
-	protected function getColumns() {
+	protected function getColumns()   {
 		return [
-			[
-				'name'       => 'checkbox',
-				'data'       => 'checkbox',
-				'title'      => '<input type="checkbox" class="check_all" onclick="check_all()" />',
-				'exportable' => false,
-				'printable'  => false,
-				'orderable'  => false,
-				'searchable' => false,
-			], [
-				'name'  => 'id',
-				'data'  => 'id',
-				'title' => '#',
-			], [
-				'name'  => 'country_name_ar',
-				'data'  => 'country_name_ar',
-				'title' => trans('admin.country_name_ar'),
-			], [
-				'name'  => 'country_name_en',
-				'data'  => 'country_name_en',
-				'title' => trans('admin.country_name_en'),
-			], [
-				'name'  => 'created_at',
-				'data'  => 'created_at',
-				'title' => trans('admin.created_at'),
-			], [
-				'name'  => 'updated_at',
-				'data'  => 'updated_at',
-				'title' => trans('admin.updated_at'),
-			], [
-				'name'       => 'edit',
-				'data'       => 'edit',
-				'title'      => trans('admin.edit'),
-				'exportable' => false,
-				'printable'  => false,
-				'orderable'  => false,
-				'searchable' => false,
-			], [
-				'name'       => 'delete',
-				'data'       => 'delete',
-				'title'      => trans('admin.delete'),
-				'exportable' => false,
-				'printable'  => false,
-				'orderable'  => false,
-				'searchable' => false,
-			],
-
+		   [
+			  'name'       => 'checkbox',
+			  'data'       => 'checkbox',
+			  'title'      => '<input type="checkbox" class="check_all" onclick="check_all()" />',
+			  'exportable' => false,
+			  'printable'  => false,
+			  'orderable'  => false,
+			  'searchable' => false,
+		   ], [
+			  'name'  => 'id',
+			  'data'  => 'id',
+			  'title' => '#',
+		   ], [
+			  'name'  => 'title',
+			  'data'  => 'title',
+			  'title' => trans('admin.title'),
+		   ], [
+			  'name'  => 'created_at',
+			  'data'  => 'created_at',
+			  'title' => trans('admin.created_at'),
+		   ], [
+			  'name'  => 'updated_at',
+			  'data'  => 'updated_at',
+			  'title' => trans('admin.updated_at'),
+		   ], [
+			  'name'       => 'edit',
+			  'data'       => 'edit',
+			  'title'      => trans('admin.edit'),
+			  'exportable' => false,
+			  'printable'  => false,
+			  'orderable'  => false,
+			  'searchable' => false,
+		   ], [
+			  'name'       => 'delete',
+			  'data'       => 'delete',
+			  'title'      => trans('admin.delete'),
+			  'exportable' => false,
+			  'printable'  => false,
+			  'orderable'  => false,
+			  'searchable' => false,
+		   ],
+  
 		];
-	}
+	 }
 
 	/**
 	 * Get filename for export.
